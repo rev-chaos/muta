@@ -176,6 +176,8 @@ pub fn gen_service_code(_: TokenStream, item: TokenStream) -> TokenStream {
                 match method {
                     #(#list_write_name => {
                         let payload_res: Result<#list_write_payload, _> = serde_json::from_str(ctx.get_payload());
+                        println!("################# {:?}", ctx.get_payload());
+                        println!("################# {:?}", payload_res);
                         if payload_res.is_err() {
                             return ServiceResponse::<String>::from_error(1, "decode service payload failed".to_owned());
                         };
