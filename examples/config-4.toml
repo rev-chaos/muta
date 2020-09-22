@@ -9,6 +9,10 @@ rpc_timeout = 10
 peer_id = "QmTEJkB5QKWsEq37huryZZfVvqBKb54sHnKn9TQcA6j3n9"
 address = "127.0.0.1:1337" # Replace it with your IP
 
+[consensus]
+overlord_gap = 5
+sync_txs_chunk_size = 5000
+
 [graphql]
 graphiql_uri = "/graphiql"
 listening_address = "0.0.0.0:8004"

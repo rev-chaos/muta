@@ -192,7 +192,7 @@ impl TxCache {
         let queue_role = self.get_queue_role();
 
         let mut order_tx_hashes = Vec::new();
-        let mut propose_tx_hashes = Vec::new();
+        let propose_tx_hashes = Vec::new();
         let mut timeout_tx_hashes = Vec::new();
 
         let mut tx_count: u64 = 0;
@@ -235,8 +235,8 @@ impl TxCache {
 
                 match stage {
                     Stage::OrderTxs => order_tx_hashes.push(tx_hash.clone()),
-                    Stage::ProposeTxs => propose_tx_hashes.push(tx_hash.clone()),
-                    Stage::Finished => {}
+                    // Stage::ProposeTxs => propose_tx_hashes.push(tx_hash.clone()),
+                    _ => {}
                 }
             } else {
                 // Switch queue_roles
